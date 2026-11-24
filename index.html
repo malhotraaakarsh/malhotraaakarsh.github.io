@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aakarsh Malhotra — Director of Data Science & Applied AI at Mastercard AI Garage. Researcher and builder working at the intersection of AI, machine learning and real-world systems.">
+  <meta name="theme-color" content="#101b2b">
+  <title>Aakarsh Malhotra — AI, Research & Building</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #142033; --muted: #657184; --paper: #f7f6f2; --white: #fff;
+      --navy: #101b2b; --blue: #9cc8ff; --line: #e4e2dc; --accent: #d8edff;
+      --serif: Georgia, "Times New Roman", serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "DM Sans", sans-serif; line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { opacity: .72; }
+    .shell { width: min(1080px, calc(100% - 48px)); margin: auto; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; padding:25px 0; border-bottom:1px solid var(--line); }
+    .brand { font: 500 12px "DM Mono", monospace; letter-spacing:.12em; text-transform:uppercase; }
+    nav { display:flex; gap:25px; font-size:12px; color:var(--muted); }
+    .hero { padding:94px 0 84px; display:grid; grid-template-columns:1.5fr .7fr; gap:60px; align-items:end; }
+    .eyebrow, .kicker { font:500 11px "DM Mono", monospace; letter-spacing:.13em; text-transform:uppercase; color:#61738a; }
+    h1 { font:800 clamp(48px, 7vw, 82px)/.99 "Manrope", sans-serif; letter-spacing:-.065em; margin:22px 0 24px; }
+    h1 span { color:#8195ad; }
+    .intro { max-width:650px; font-size:18px; line-height:1.75; color:#475569; }
+    .hero-aside { border-left:1px solid var(--line); padding:8px 0 8px 27px; }
+    .hero-aside .role { font:600 15px/1.5 "Manrope", sans-serif; }
+    .hero-aside p { color:var(--muted); font-size:13px; margin:9px 0 20px; }
+    .pill { display:inline-block; border:1px solid #d6dce4; border-radius:30px; padding:7px 12px; font:11px "DM Mono",monospace; margin:3px 3px 0 0; color:#46566a; }
+    .links { display:flex; gap:18px; flex-wrap:wrap; margin-top:27px; font-size:13px; font-weight:600; }
+    .links a { border-bottom:1px solid #9aa8b8; padding-bottom:3px; }
+    .dark-band { background:var(--navy); color:#f4f7fb; padding:62px 0; }
+    .dark-band .kicker { color:#9db8d7; }
+    .statement { font:500 clamp(25px, 3.6vw, 39px)/1.35 "Manrope", sans-serif; letter-spacing:-.035em; max-width:900px; margin:18px 0 0; }
+    section.content { padding:76px 0; border-bottom:1px solid var(--line); }
+    .section-head { display:grid; grid-template-columns:220px 1fr; gap:45px; margin-bottom:38px; }
+    h2 { font:700 26px "Manrope",sans-serif; letter-spacing:-.04em; margin:0; }
+    .section-note { color:var(--muted); max-width:620px; margin:3px 0 0; font-size:14px; }
+    .timeline { border-top:1px solid var(--line); }
+    .item { display:grid; grid-template-columns:190px 1fr; gap:40px; padding:25px 0; border-bottom:1px solid var(--line); }
+    .date { color:var(--muted); font:11px "DM Mono",monospace; padding-top:5px; }
+    h3 { font:700 17px "Manrope",sans-serif; margin:0 0 4px; letter-spacing:-.02em; }
+    .org { color:#607087; font-size:13px; margin-bottom:10px; }
+    .item p { color:#526071; font-size:14px; margin:0; max-width:720px; }
+    .cards { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+    .card { background:#fff; border:1px solid var(--line); padding:23px 24px; min-height:150px; }
+    .card .number { font:11px "DM Mono",monospace; color:#8292a6; }
+    .card h3 { margin:14px 0 8px; }
+    .card p { color:var(--muted); font-size:13px; margin:0; }
+    .taglist { display:flex; flex-wrap:wrap; gap:9px; margin-top:22px; }
+    .tag { background:#eaeef2; color:#405168; padding:8px 12px; border-radius:3px; font-size:12px; }
+    .patents { display:grid; grid-template-columns:1fr 1fr; gap:0 35px; }
+    .patent { padding:17px 0; border-top:1px solid var(--line); font-size:14px; font-weight:600; }
+    .patent small { display:block; color:var(--muted); font:11px "DM Mono",monospace; margin-top:6px; }
+    .footer { padding:45px 0 55px; display:flex; justify-content:space-between; gap:20px; align-items:center; color:var(--muted); font-size:12px; }
+    .footer strong { color:var(--ink); font-weight:600; }
+    @media (max-width:700px) {
+      .shell { width:min(100% - 34px, 1080px); }
+      .topbar { align-items:flex-start; gap:18px; flex-direction:column; }
+      nav { gap:16px; flex-wrap:wrap; }
+      .hero { padding:65px 0 55px; grid-template-columns:1fr; gap:35px; }
+      .hero-aside { border-left:0; border-top:1px solid var(--line); padding:22px 0 0; }
+      .section-head, .item { grid-template-columns:1fr; gap:10px; }
+      section.content { padding:55px 0; }
+      .cards, .patents { grid-template-columns:1fr; }
+      .footer { align-items:flex-start; flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="shell topbar">
+    <a class="brand" href="#">AM / Personal site</a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#research">Research</a><a href="#education">Education</a><a href="#contact">Connect</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="shell hero" id="about">
+      <div>
+        <div class="eyebrow">Aakarsh Malhotra · Ph.D. · Data Science & Applied AI</div>
+        <h1>Ideas into<br><span>intelligent impact.</span></h1>
+        <p class="intro">I work at the intersection of artificial intelligence, machine learning research, and large-scale real-world systems. My focus is on turning challenging technical ideas into practical capabilities—building AI that is not only sophisticated, but scalable, reliable, and useful.</p>
+        <div class="links">
+          <a href="https://www.linkedin.com/in/aakarshmalhotra/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="#research">Explore my work ↓</a>
+        </div>
+      </div>
+      <aside class="hero-aside">
+        <div class="kicker">Currently</div>
+        <div class="role">Director of Data Science<br>Mastercard AI Garage</div>
+        <p>Gurugram, India</p>
+        <div class="kicker">Areas I work around</div>
+        <span class="pill">Applied AI</span><span class="pill">Machine Learning</span><span class="pill">Graph Learning</span><span class="pill">FinTech</span>
+      </aside>
+    </section>
+
+    <div class="dark-band">
+      <div class="shell">
+        <div class="kicker">The through-line</div>
+        <p class="statement">Strong research creates possibilities. Thoughtful engineering makes them real. I enjoy working across that boundary—where fundamental ideas meet the constraints and opportunities of the real world.</p>
+      </div>
+    </div>
+
+    <section class="shell content" id="experience">
+      <div class="section-head">
+        <div><div class="kicker">01 / The journey</div><h2>Experience</h2></div>
+        <p class="section-note">A career spanning applied research, academic exploration, and the development of machine learning systems for real-world use.</p>
+      </div>
+      <div class="timeline">
+        <article class="item">
+          <div class="date">2025 — PRESENT</div>
+          <div><h3>Director of Data Science</h3><div class="org">Mastercard AI Garage</div><p>Leading data science and applied AI work, with an emphasis on translating research-led ideas into impactful solutions for financial services and digital payments.</p></div>
+        </article>
+        <article class="item">
+          <div class="date">2023 — 2025</div>
+          <div><h3>Data Science Manager</h3><div class="org">Mastercard AI Garage</div><p>Worked across research, development, and deployment of machine learning capabilities in a large-scale enterprise environment.</p></div>
+        </article>
+        <article class="item">
+          <div class="date">2021 — 2023</div>
+          <div><h3>Senior Data Scientist</h3><div class="org">Mastercard AI Garage</div><p>Focused on building and advancing data science and machine learning solutions for complex, high-impact problems.</p></div>
+        </article>
+        <article class="item">
+          <div class="date">2020 — 2021</div>
+          <div><h3>Visiting Research Scholar</h3><div class="org">Indian Institute of Technology Jodhpur</div><p>Research engagement during the doctoral journey.</p></div>
+        </article>
+        <article class="item">
+          <div class="date">2016 — 2017</div>
+          <div><h3>Visiting Research Scholar</h3><div class="org">West Virginia University, USA</div><p>Research experience in machine learning and biometrics.</p></div>
+        </article>
+        <article class="item">
+          <div class="date">2015</div>
+          <div><h3>Software Engineer</h3><div class="org">Info Edge India Ltd.</div><p>An early industry role before moving deeper into research and machine learning.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell content" id="research">
+      <div class="section-head">
+        <div><div class="kicker">02 / What I explore</div><h2>Research & interests</h2></div>
+        <p class="section-note">My work has evolved from pattern recognition and biometrics to scalable machine learning and graph-based approaches, with a continuing interest in trustworthy and production-ready AI.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="number">01 — REPRESENTATION</div><h3>Machine Learning & Deep Learning</h3><p>Learning useful representations, building robust models, and improving how systems generalize.</p></article>
+        <article class="card"><div class="number">02 — RELATIONSHIPS</div><h3>Graph Machine Learning</h3><p>Modeling complex relationships and developing scalable graph-based learning methods.</p></article>
+        <article class="card"><div class="number">03 — TRUST</div><h3>Biometrics & Privacy</h3><p>Earlier research spanning fingerprint and finger-selfie recognition, authentication, robustness, and privacy.</p></article>
+        <article class="card"><div class="number">04 — DEPLOYMENT</div><h3>Scalable Applied AI</h3><p>Bridging research and production through efficient, low-latency, and reliable machine learning systems.</p></article>
+      </div>
+      <div class="taglist">
+        <span class="tag">Artificial Intelligence</span><span class="tag">Machine Learning</span><span class="tag">Graph Representation Learning</span><span class="tag">Multi-task Learning</span><span class="tag">Biometrics</span><span class="tag">Computer Vision</span><span class="tag">Privacy-preserving ML</span><span class="tag">FinTech</span>
+      </div>
+    </section>
+
+    <section class="shell content">
+      <div class="section-head">
+        <div><div class="kicker">03 / Selected innovation</div><h2>Patents</h2></div>
+        <p class="section-note">A selection of patent publications associated with my work. Patent titles and application identifiers are included as listed in public profile records.</p>
+      </div>
+      <div class="patents">
+        <div class="patent">Partitioning-based scalable weighted aggregation composition for knowledge graph embedding<small>US20250232154A1 · 2025</small></div>
+        <div class="patent">Method and system for intelligently settling bridged transactions<small>US20250378441A1 · 2025</small></div>
+        <div class="patent">Determining more accurate labels for nodes in a graph<small>US20250245677A1 · 2025</small></div>
+        <div class="patent">Methods and systems for mitigating negative transfer in multi-task learning<small>US20250068911A1 · 2025</small></div>
+        <div class="patent">Methods and systems for generating task agnostic representations<small>US20250068910A1 · 2025</small></div>
+        <div class="patent">Systems and methods for predicting parameters and timing of a computer message<small>US20250021977A1 · 2025</small></div>
+      </div>
+    </section>
+
+    <section class="shell content" id="education">
+      <div class="section-head">
+        <div><div class="kicker">04 / Foundations</div><h2>Education</h2></div>
+        <p class="section-note">A foundation in computer science, followed by doctoral research in artificial intelligence.</p>
+      </div>
+      <div class="timeline">
+        <article class="item">
+          <div class="date">2015 — 2024</div>
+          <div><h3>Ph.D. — Artificial Intelligence</h3><div class="org">Indraprastha Institute of Information Technology, Delhi (IIIT-Delhi)</div><p>Doctoral research in machine learning and related areas, alongside academic research and teaching.</p></div>
+        </article>
+        <article class="item">
+          <div class="date">2011 — 2015</div>
+          <div><h3>B.Tech. — Computer Science & Engineering</h3><div class="org">Indraprastha Institute of Information Technology, Delhi (IIIT-Delhi)</div><p>Undergraduate foundation in computer science and engineering.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell content" id="recognition">
+      <div class="section-head">
+        <div><div class="kicker">05 / Recognition</div><h2>Selected honours</h2></div>
+        <p class="section-note">Recognition received during my academic and research journey.</p>
+      </div>
+      <div class="timeline">
+        <article class="item"><div class="date">SEP 2019</div><div><h3>Best Teaching Assistant Award</h3><div class="org">IIIT-Delhi</div><p>For the course CSE 642: Advanced Machine Learning.</p></div></article>
+        <article class="item"><div class="date">SEP 2019</div><div><h3>Dean's Award for Innovation in Research and Development</h3><div class="org">IIIT-Delhi</div><p>For research on person authentication using head images.</p></div></article>
+        <article class="item"><div class="date">NOV 2015</div><div><h3>Visvesvaraya Research Fellowship</h3><div class="org">Government of India</div><p>Fellowship supporting doctoral research in IT and related areas.</p></div></article>
+      </div>
+    </section>
+
+    <section class="dark-band" id="contact">
+      <div class="shell">
+        <div class="kicker">06 / Say hello</div>
+        <p class="statement">Interested in research, applied AI, graph learning, or the space between academia and industry? Let's connect.</p>
+        <div class="links">
+          <a href="https://www.linkedin.com/in/aakarshmalhotra/" target="_blank" rel="noopener noreferrer" style="color:#fff;border-color:#8da4bf">Connect on LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell footer">
+    <div><strong>Aakarsh Malhotra</strong><br>Personal website · Built with curiosity.</div>
+    <div>© <span id="year"></span> · Hosted on GitHub Pages</div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
